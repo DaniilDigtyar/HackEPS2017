@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from .models import Users
+from .forms import SearchUser
+from django.http import HttpResponse, HttpResponseRedirect
 def inici(request):
-    nom_usuari=Users.user
-    return render(request,'crawler/inici.html',{'nom_usuari':nom_usuari})
+    voidSearchUser = SearchUser()
+    if request.method == "POST":
+        name=request.POST.get('name', '')
+    return render(request,'crawler/inici.html', {'SearchUser':voidSearchUser})
+
 
 # Create your views here.
