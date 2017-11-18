@@ -13,3 +13,7 @@
 - Instalar dependencias:
 
 `pip install -r requirements.txt`
+
+## Instalar / ejecutar DBs
+
+`docker-compose up -d`

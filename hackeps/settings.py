@@ -25,7 +25,9 @@ SECRET_KEY = '6+yts&(521#i%7+mb!zr!kr(y+-mvtby9$(=#hb8@g!tq=_98k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+]
 
 
 # Application definition
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 'crawler',
+    'django-rq',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +123,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+
+# Task management
+RQ_QUEUES = {
+    'crawl': {
+        'HOST': REDIS_HOST,
+        'PORT': REDIS_PORT,
+        'DB': 0,
+        'PASSWORD': None,
+        'DEFAULT_TIMEOUT': 360,
+    },
+}
