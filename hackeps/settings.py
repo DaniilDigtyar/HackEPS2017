@@ -139,3 +139,7 @@ RQ_QUEUES = {
         'DEFAULT_TIMEOUT': 360,
     },
 }
+
+
+# Crawler settings
+CRAWLER_DOWNLOAD_PATH = '/tmp/downloads/'
