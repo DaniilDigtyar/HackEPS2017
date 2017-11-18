@@ -129,13 +129,26 @@ REDIS_PORT = 6379
 RQ_SHOW_ADMIN_LINK = True
 
 RQ_QUEUES = {
-    'crawl': {
+    'profiles': {
         'HOST': REDIS_HOST,
         'PORT': REDIS_PORT,
         'DB': 0,
         'PASSWORD': None,
         'DEFAULT_TIMEOUT': 360,
     },
+    'followers': {
+        'HOST': REDIS_HOST,
+        'PORT': REDIS_PORT,
+        'DB': 0,
+        'PASSWORD': None,
+        'DEFAULT_TIMEOUT': 360,
+    },
+}
+
+
+INSTAGRAM = {
+    'username': 'hackeps2017codemonkeys',
+    'password': 'hackeps2017',
 }
 
 STATIC_URL = '/static/'
