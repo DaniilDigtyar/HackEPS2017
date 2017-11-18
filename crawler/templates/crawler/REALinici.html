@@ -14,17 +14,15 @@
     <title>Team Monkey!</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://font-awesomets.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}"rel="stylesheet" type="text/css">
+    <link href="{% static "vendor/simple-line-icons/css/simple-line-icons.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" %}" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/landing-page.min.css' %}" rel="stylesheet">
-
-    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+    <link href="{% static "css/landing-page.min.css" %}" rel="stylesheet">
 
   </head>
 
@@ -37,38 +35,38 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-       <h1 class="my-4">Comparation</h1>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example
-            </div>
-            <div class="card-body">
-              <canvas id="myPieChart" width="100%" height="100"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Introduce dos nombre para comparar!</h1>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-            <div class="card-body">
-              <canvas id="myPieChart" width="100%" height="100"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form method="POST" class="post-form">
+              {% csrf_token %}
+
+              <div class="form-row">
+                <div class="col-5">
+                  {{SearchUser.name1}}
+                </div>
+                <div class="col-5">
+                  {{SearchUser.name2}}
+                </div>
+                <div class="col-2">
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">Buscar</button>
+                </div>
+              </div>  
+            </form>
+          </div>
           </div>
         </div>
       </div>
+    </header>
 
-    </div>
+
+
 
     <!-- Footer -->
     <footer class="footer bg-light">
@@ -117,19 +115,9 @@
       </div>
     </footer>
 
-        <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="{% static 'vendor/chart.js/Chart.js' %}"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'js/sb-admin.min.js' %}"></script>
-    <!-- Custom scripts for this page-->
-    <script src="{% static 'js/sb-admin-charts.min.js' %}"></script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
