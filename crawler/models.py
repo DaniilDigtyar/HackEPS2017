@@ -9,6 +9,10 @@ class User(models.Model):
     def __str__(self):
         return self.title
 
+class FollowRelation(models.Model):
+    user=models.ForeignKey('User',on_delete=models.CASCADE, related_name='users')
+    follower=models.ForeignKey('User',on_delete=models.CASCADE, related_name='qwe')
+
 class Photos(models.Model):
     idphoto=models.IntegerField(primary_key=True)
     username_vinculed=models.ForeignKey(User,on_delete=models.CASCADE)
