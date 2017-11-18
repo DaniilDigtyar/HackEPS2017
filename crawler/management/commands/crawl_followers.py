@@ -5,13 +5,13 @@ from hackeps import tasks
 
 class Command(BaseCommand):
 
-    help = 'Encolar url para el crawler'
+    help = 'Encolar username para descargar los usuarios'
 
     def add_arguments(self, parser):
         parser.add_argument(
             'service', type=str, help='Service name: instagram')
         parser.add_argument(
-            'urls', nargs='+', type=str, help='List of urls to download')
+            'username', type=str, help='Username to crawl the followers')
 
     def handle(self, *args, **options):
-        tasks.crawl_urls(options['service'], options['urls'])
+        tasks.crawl_followers(options['service'], options['username'])
