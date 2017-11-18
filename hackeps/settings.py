@@ -138,7 +138,10 @@ RQ_QUEUES = {
     },
 }
 
-
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Crawler settings
+CRAWLER_DOWNLOAD_PATH = '/tmp/downloads/'
+
