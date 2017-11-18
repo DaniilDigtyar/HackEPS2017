@@ -10,11 +10,11 @@ class User(models.Model):
         return self.title
 
 class Photos(models.Model):
-    idphoto=model.IntegerField(primary_key=True)
-    username_vinculed=model.ForeignKey(User,on_delete=models.CASCADE)
+    idphoto=models.IntegerField(primary_key=True)
+    username_vinculed=models.ForeignKey(User,on_delete=models.CASCADE)
     likes=models.IntegerField()
     coments=models.IntegerField()
-    hastags=TextField()
+    hastags=models.TextField()
 
     def __str__(self):
         return self.title
