@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'crawler',
-    'django-rq',
+    'crawler',
+    'django_rq',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +128,8 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 
 # Task management
+RQ_SHOW_ADMIN_LINK = True
+
 RQ_QUEUES = {
     'crawl': {
         'HOST': REDIS_HOST,

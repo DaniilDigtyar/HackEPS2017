@@ -5,6 +5,7 @@
 
 # DB docker's path
 data
+db.sqlite3
 
 # Vitualenv's
 venv/
