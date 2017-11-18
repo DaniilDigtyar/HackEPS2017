@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .forms import SearchUser
 from django.http import HttpResponse, HttpResponseRedirect
+
+from .forms import SearchUser
+
 
 def inici(request):
     voidSearchUser = SearchUser()
