@@ -122,8 +122,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 
@@ -140,6 +138,10 @@ RQ_QUEUES = {
     },
 }
 
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Crawler settings
 CRAWLER_DOWNLOAD_PATH = '/tmp/downloads/'
+
