@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^django-rq/', include('django_rq.urls')),
     url(r'^$', views.inici, name='inici'),
+    url(r'^information/',views.information, name='information')
 ]

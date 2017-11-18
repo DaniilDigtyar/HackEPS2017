@@ -9,8 +9,8 @@ def inici(request):
         name2=request.POST.get('name2', '')
         print name1
         print name2
-
+        return render(request,'crawler/information.html', {'SearchUser':voidSearchUser})
     return render(request,'crawler/inici.html', {'SearchUser':voidSearchUser})
-
-
+def information(request):
+    return render(request,'crawler/information.html')
 # Create your views here.
