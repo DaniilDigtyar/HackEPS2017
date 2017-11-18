@@ -1,0 +1,10 @@
+# OS generated files
+*.pyc
+*.pyo
+.DS_Store
+
+# DB docker's path
+data
+
+# Vitualenv's
+venv/
