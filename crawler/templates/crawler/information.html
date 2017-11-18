@@ -13,6 +13,7 @@
 
 	    <!-- Bootstrap core CSS -->
 	    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+	    <link href="{% static "vendor/jqcloud.min.css" %}" rel="stylesheet">
 
 	    <!-- Custom fonts for this template -->
 	    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}"rel="stylesheet" type="text/css">
@@ -35,6 +36,7 @@
     	<div class="row justify-content-center">
 	    	<div class="col-6">
 	    		<h1>{{user1}}</h1>
+          <img style="margin-left: 25%; margin-top: 10px; margin-bottom: 20px;" src="{{ user1.profile_pic_link }}" />
 	    		<dl>
 	                <dt>Followers: </dt>
 	                <dd>{{user1.followers}}</dd>
@@ -42,12 +44,15 @@
 	                <dd>{{user1.follows}}</dd>
 	                <dt>Description: </dt>
                		<dd>{{user1.description}}</dd>
+                  <dt>Hashtags</dt>
+                  <div style="width: 100%; height: 300px;" id="user1_wordcloud" class="demo jqcloud"></div>
                 <dl>
 
 	    	</div>
 
 	    	<div class="col-6">
 	    		<h1>{{user2}}</h1>
+          <img style="margin-top: 10px; margin-bottom: 20px;" src="{{ user2.profile_pic_link }}" />
 	    		<dl>
 	                <dt>Followers: </dt>
 	                <dd>{{user2.followers}}</dd>
@@ -55,6 +60,8 @@
 	                <dd>{{user2.follows}}</dd>
 	                <dt>Description: </dt>
                		<dd>{{user2.description}}</dd>
+                  <dt>Hashtags</dt>
+                  <div style="width: 100%; height: 300px;" id="user2_wordcloud" class="demo jqcloud"></div>
                 <dl>
 	    	</div>
     	</div>
@@ -63,5 +70,24 @@
     </div>
 
 </body>
+
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jqcloud.min.js' %}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var u1_wc = [];
+        {% for k, v in user1_wc %}
+            u1_wc.push({text: "{{ k }}", weight: parseInt("{{ v }}")});
+        {% endfor %}
+        $('#user1_wordcloud').jQCloud(u1_wc);
+
+        var u2_wc = [];
+        {% for k, v in user2_wc %}
+            u2_wc.push({text: "{{ k }}", weight: parseInt("{{ v }}")});
+        {% endfor %}
+        $('#user2_wordcloud').jQCloud(u2_wc);
+    });
+</script>
 
 </html>
