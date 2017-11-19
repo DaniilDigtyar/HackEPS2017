@@ -7,7 +7,7 @@ class SearchUser(forms.Form):
         widget=forms.TextInput(
         	attrs={
         		'class':'form-control form-control-lg',
-        		'placeholder':'Nicolas Tesla...'}
+        		'placeholder':'productes_capell'}
         )
     )
     name2 = forms.CharField(
@@ -16,6 +16,6 @@ class SearchUser(forms.Form):
          widget=forms.TextInput(
         	attrs={
         		'class':'form-control form-control-lg',
-        		'placeholder':'Thomas Edison...'}
+        		'placeholder':'la_vallenca'}
         )
     )
