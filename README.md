@@ -17,3 +17,11 @@
 ## Instalar / ejecutar DBs
 
 `docker-compose up -d`
+
+`python manage.py migrate`
+
+## Dependencias de sistema
+
+ChromeWebdriver: https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+En OSX: `brew search chromedriver`

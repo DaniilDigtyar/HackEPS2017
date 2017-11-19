@@ -1,3 +1,7 @@
+""" Factories para los profiles y los followers
+
+    Actualmente solo esta implementado para instagram
+"""
 import logging
 
 from scrapy.crawler import CrawlerProcess
@@ -24,12 +28,14 @@ def get_profile(service, username):
 
 
 def get_profile_class(service_name):
+    """ Factory for profile module """
     if 'instagram' == service_name:
         return profile.InstagramProfile
     raise DownloaderException('Invalid service `{}`'.format(service_name))
 
 
 def get_followers(service, username):
+    """ Follower module entry point """
     try:
         # Ensure user exists
         user = models.User.objects.get(username__iexact=username)
@@ -50,6 +56,7 @@ def get_followers(service, username):
 
 
 def get_follower_class(service_name):
+    """ Factory for followers module """
     if 'instagram' == service_name:
         return followers.InstagramFollowers()
     raise DownloaderException('Invalid service `{}`'.format(service_name))
