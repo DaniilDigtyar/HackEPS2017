@@ -29,7 +29,7 @@ queuelib==1.4.2
 redis==2.10.6
 requests==2.18.4
 rq==0.9.1
-Scrapy==1.4.0
+Scrapy==2.6.1
 selenium==3.7.0
 service-identity==17.0.0
 six==1.11.0
